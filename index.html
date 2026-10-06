@@ -834,3 +834,839 @@ input.addEventListener(
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>أكاديمية الكمبيوتر</title>
+
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef6ff;
+  color: #222;
+}
+
+header {
+  background: #087fe8;
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+header p {
+  font-size: 17px;
+}
+
+nav {
+  background: white;
+  padding: 15px 5px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 2px 8px #0002;
+}
+
+nav a {
+  color: #0871c9;
+  text-decoration: none;
+  margin: 6px;
+  font-weight: bold;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  margin: 18px 0;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px #0002;
+}
+
+.card h2 {
+  color: #0871c9;
+}
+
+details {
+  margin-top: 15px;
+}
+
+summary {
+  background: #e7f3ff;
+  padding: 17px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.answer {
+  padding: 18px 10px;
+  line-height: 2;
+}
+
+.answer h3 {
+  color: #0871c9;
+}
+
+.step {
+  background: #f5f9fd;
+  padding: 12px;
+  margin: 10px 0;
+  border-right: 4px solid #087fe8;
+  border-radius: 8px;
+}
+
+.ai {
+  background: #101827;
+  color: white;
+}
+
+.ai h2 {
+  color: #62b5ff;
+}
+
+.ai-intro {
+  line-height: 1.9;
+}
+
+.chat {
+  background: #172235;
+  padding: 15px;
+  border-radius: 14px;
+  min-height: 300px;
+}
+
+.message {
+  padding: 13px;
+  margin: 10px 0;
+  border-radius: 12px;
+  line-height: 1.8;
+}
+
+.bot {
+  background: #29384d;
+  margin-left: 15px;
+}
+
+.user {
+  background: #087fe8;
+  margin-right: 15px;
+}
+
+.input {
+  width: 100%;
+  padding: 15px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 14px;
+  border: 0;
+  border-radius: 10px;
+  background: #087fe8;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.photo {
+  background: #34495e;
+}
+
+#photoInput {
+  display: none;
+}
+
+#photoPreview {
+  display: none;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  margin-top: 12px;
+  border-radius: 10px;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+@media(max-width:600px) {
+
+  header h1 {
+    font-size: 25px;
+  }
+
+  nav a {
+    font-size: 13px;
+    margin: 3px;
+  }
+
+  .card {
+    padding: 17px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>💻 أكاديمية الكمبيوتر</h1>
+
+<p>
+تعلم الكمبيوتر و Windows 11 خطوة بخطوة
+</p>
+
+</header>
+
+<nav>
+
+<a href="#home">الرئيسية</a>
+
+<a href="#lessons">الدروس</a>
+
+<a href="#windows">Windows 11</a>
+
+<a href="#billy">Billy AI</a>
+
+</nav>
+
+<main>
+
+<div class="card" id="home">
+
+<h2>👋 أهلاً بك يا طالب!</h2>
+
+<p>
+مرحبًا بك في أكاديمية الكمبيوتر.
+هذا الموقع يساعدك على تعلم أساسيات
+الكمبيوتر ونظام Windows 11 بطريقة سهلة.
+</p>
+
+<p>
+اقرأ الدروس بالترتيب، وطبّق الخطوات
+على جهازك بنفسك. وإذا لم تفهم شيئًا،
+يمكنك سؤال Billy AI.
+</p>
+
+</div>
+
+<div class="card" id="lessons">
+
+<h2>📚 أساسيات الكمبيوتر</h2>
+
+<details>
+
+<summary>
+1️⃣ ما هو الكمبيوتر وكيف نستخدمه؟
+</summary>
+
+<div class="answer">
+
+<h3>ما هو الكمبيوتر؟</h3>
+
+<p>
+الكمبيوتر جهاز إلكتروني يستطيع استقبال
+المعلومات ومعالجتها ثم إعطائك نتيجة.
+يمكنك استخدامه للدراسة وكتابة الواجبات
+ومشاهدة الفيديوهات والبحث في الإنترنت
+وتشغيل البرامج والألعاب.
+</p>
+
+<h3>كيف نستخدم الكمبيوتر؟</h3>
+
+<div class="step">
+<b>الخطوة 1:</b>
+شغّل الكمبيوتر وانتظر حتى تظهر الشاشة
+الرئيسية.
+</div>
+
+<div class="step">
+<b>الخطوة 2:</b>
+استخدم الماوس لتحريك السهم الموجود
+على الشاشة.
+</div>
+
+<div class="step">
+<b>الخطوة 3:</b>
+اضغط على الأيقونات لفتح البرامج.
+</div>
+
+<div class="step">
+<b>الخطوة 4:</b>
+استخدم لوحة المفاتيح لكتابة الكلمات
+والأرقام.
+</div>
+
+<p>
+تذكر أن الكمبيوتر لا يفهم ما تريده
+من نفسه؛ أنت تعطيه أوامر باستخدام
+الماوس ولوحة المفاتيح والبرامج.
+</p>
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+2️⃣ الماوس: كيف نستخدمه؟
+</summary>
+
+<div class="answer">
+
+<h3>ما هو الماوس؟</h3>
+
+<p>
+الماوس جهاز يساعدك على التحكم بالمؤشر
+الذي يظهر على الشاشة. تستطيع باستخدامه
+فتح البرامج واختيار الملفات وتحريك
+الأشياء والضغط على الأزرار.
+</p>
+
+<h3>أهم استخدامات الماوس</h3>
+
+<div class="step">
+<b>النقرة اليسرى:</b>
+تستخدم لاختيار شيء أو الضغط على زر.
+</div>
+
+<div class="step">
+<b>النقرتان:</b>
+النقر مرتين بسرعة على ملف أو برنامج
+يفتحه في العادة.
+</div>
+
+<div class="step">
+<b>النقرة اليمنى:</b>
+تفتح قائمة تحتوي على خيارات إضافية.
+</div>
+
+<div class="step">
+<b>عجلة الماوس:</b>
+تستخدم للتحرك إلى أعلى وأسفل الصفحة.
+</div>
+
+<p>
+مثال: إذا أردت فتح برنامج، حرّك المؤشر
+فوق أيقونة البرنامج ثم اضغط عليها
+مرتين بسرعة.
+</p>
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+3️⃣ لوحة المفاتيح: الكتابة والاختصارات
+</summary>
+
+<div class="answer">
+
+<h3>ما هي لوحة المفاتيح؟</h3>
+
+<p>
+لوحة المفاتيح تحتوي على أزرار تسمى
+مفاتيح. نستخدمها لكتابة الحروف
+والأرقام والرموز وإعطاء بعض الأوامر.
+</p>
+
+<h3>مفاتيح مهمة</h3>
+
+<div class="step">
+<b>Enter:</b>
+لتأكيد أمر أو الانتقال إلى سطر جديد.
+</div>
+
+<div class="step">
+<b>Space:</b>
+لعمل مسافة بين الكلمات.
+</div>
+
+<div class="step">
+<b>Backspace:</b>
+لحذف الحرف الموجود قبل المؤشر.
+</div>
+
+<div class="step">
+<b>Shift:</b>
+يساعد على كتابة الحروف الكبيرة
+وبعض الرموز.
+</div>
+
+<div class="step">
+<b>Ctrl:</b>
+يستخدم مع مفاتيح أخرى لتنفيذ
+اختصارات مفيدة.
+</div>
+
+<h3>مثال على اختصار</h3>
+
+<p>
+اضغط Ctrl + C لنسخ النص المحدد،
+ثم اضغط Ctrl + V للصق النص.
+</p>
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+4️⃣ الملفات والمجلدات
+</summary>
+
+<div class="answer">
+
+<h3>ما هو الملف؟</h3>
+
+<p>
+الملف هو شيء يخزن معلومات، مثل صورة
+أو فيديو أو مستند أو ملف صوتي.
+</p>
+
+<h3>ما هو المجلد؟</h3>
+
+<p>
+المجلد يستخدم لتنظيم الملفات.
+مثلًا يمكنك إنشاء مجلد باسم "واجباتي"
+ووضع جميع واجباتك بداخله.
+</p>
+
+<h3>إنشاء مجلد جديد</h3>
+
+<div class="step">
+<b>الخطوة 1:</b>
+افتح المكان الذي تريد إنشاء المجلد فيه.
+</div>
+
+<div class="step">
+<b>الخطوة 2:</b>
+اضغط بزر الماوس الأيمن في مكان فارغ.
+</div>
+
+<div class="step">
+<b>الخطوة 3:</b>
+اختر New ثم Folder.
+</div>
+
+<div class="step">
+<b>الخطوة 4:</b>
+اكتب اسم المجلد ثم اضغط Enter.
+</div>
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+5️⃣ الإنترنت وكيف نستخدمه بأمان
+</summary>
+
+<div class="answer">
+
+<h3>ما هو الإنترنت؟</h3>
+
+<p>
+الإنترنت شبكة ضخمة تربط أجهزة كثيرة
+حول العالم. يمكن استخدامه للتعلم
+والبحث والتواصل والوصول إلى المواقع.
+</p>
+
+<h3>كيف نستخدم الإنترنت بأمان؟</h3>
+
+<div class="step">
+لا تشارك كلمة المرور مع أي شخص.
+</div>
+
+<div class="step">
+لا تضغط على الروابط المشبوهة.
+</div>
+
+<div class="step">
+لا تحمل البرامج من مواقع غير موثوقة.
+</div>
+
+<div class="step">
+إذا ظهر لك شيء غريب، اسأل المعلم
+أو شخصًا بالغًا تثق به.
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+<div class="card" id="windows">
+
+<h2>🪟 تعلم Windows 11</h2>
+
+<details>
+
+<summary>
+6️⃣ ما هو Windows 11؟
+</summary>
+
+<div class="answer">
+
+<p>
+Windows 11 هو نظام تشغيل من شركة
+Microsoft. نظام التشغيل هو البرنامج
+الأساسي الذي يساعدك على استخدام
+الكمبيوتر وتشغيل البرامج وإدارة الملفات.
+</p>
+
+<p>
+بعد تشغيل الكمبيوتر، يقوم Windows
+بتجهيز النظام ثم يعرض لك سطح المكتب.
+ومن هناك تستطيع فتح البرامج والملفات
+والإعدادات.
+</p>
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+7️⃣ سطح المكتب
+</summary>
+
+<div class="answer">
+
+<p>
+سطح المكتب هو الشاشة الرئيسية التي
+تظهر أمامك بعد تشغيل Windows.
+ستجد فيه الأيقونات وشريط المهام
+والخلفية.
+</p>
+
+<p>
+يمكنك ترتيب الأيقونات وفتح البرامج
+من سطح المكتب. وإذا أردت الوصول
+إلى الملفات، يمكنك فتح مستكشف الملفات
+من شريط المهام أو قائمة ابدأ.
+</p>
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+8️⃣ قائمة Start
+</summary>
+
+<div class="answer">
+
+<p>
+قائمة Start أو قائمة ابدأ تساعدك
+على الوصول إلى التطبيقات والإعدادات
+والبحث عن الأشياء الموجودة في جهازك.
+</p>
+
+<div class="step">
+<b>الخطوة 1:</b>
+اضغط زر Windows الموجود في لوحة
+المفاتيح أو اضغط شعار Windows.
+</div>
+
+<div class="step">
+<b>الخطوة 2:</b>
+ستظهر قائمة Start.
+</div>
+
+<div class="step">
+<b>الخطوة 3:</b>
+يمكنك البحث عن أي برنامج في مربع البحث.
+</div>
+
+<div class="step">
+<b>الخطوة 4:</b>
+اضغط على البرنامج لفتحه.
+</div>
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+9️⃣ شريط المهام
+</summary>
+
+<div class="answer">
+
+<p>
+شريط المهام هو الشريط الموجود عادةً
+في أسفل الشاشة. يحتوي على زر Start
+وأيقونات بعض البرامج ومعلومات النظام.
+</p>
+
+<p>
+عندما تفتح برنامجًا، تستطيع غالبًا
+رؤية أيقونته في شريط المهام والعودة
+إليه بالضغط عليها.
+</p>
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+🔟 مستكشف الملفات
+</summary>
+
+<div class="answer">
+
+<p>
+مستكشف الملفات File Explorer هو المكان
+الذي تستخدمه للوصول إلى الملفات
+والمجلدات الموجودة على جهازك.
+</p>
+
+<div class="step">
+افتح File Explorer من شريط المهام.
+</div>
+
+<div class="step">
+اختر المجلد الذي تريد الدخول إليه.
+</div>
+
+<div class="step">
+اضغط على الملف لفتحه.
+</div>
+
+<div class="step">
+يمكنك نسخ الملفات ونقلها وإعادة تسميتها.
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+<div class="card ai" id="billy">
+
+<h2>🤖 Billy AI</h2>
+
+<p class="ai-intro">
+
+<b>Billy</b> هو مساعدك التعليمي.
+يمكنك التحدث معه وسؤاله عن الكمبيوتر
+وWindows 11.
+
+<br><br>
+
+يمكنك أيضًا إرسال صورة له عندما تحتاج
+إلى مساعدة في فهم شيء موجود على الشاشة.
+
+</p>
+
+<div class="chat" id="chat">
+
+<div class="message bot">
+
+مرحبًا! أنا Billy 🤖
+
+أنا مساعدك في تعلم الكمبيوتر
+وWindows 11.
+
+اكتب لي سؤالك وسأساعدك.
+
+</div>
+
+</div>
+
+<input
+id="message"
+class="input"
+placeholder="اكتب سؤالك هنا...">
+
+<div class="buttons">
+
+<button
+onclick="sendMessage()">
+💬 إرسال
+</button>
+
+<button
+class="photo"
+onclick="choosePhoto()">
+📷 إرسال صورة
+</button>
+
+</div>
+
+<input
+id="photoInput"
+type="file"
+accept="image/*">
+
+<img
+id="photoPreview">
+
+</div>
+
+</main>
+
+<footer>
+
+أكاديمية الكمبيوتر © 2026
+
+</footer>
+
+<script>
+
+let chat =
+document.getElementById("chat");
+
+let input =
+document.getElementById("message");
+
+let photo =
+document.getElementById("photoInput");
+
+function addMessage(text, type) {
+
+  let div =
+  document.createElement("div");
+
+  div.className =
+  "message " + type;
+
+  div.textContent = text;
+
+  chat.appendChild(div);
+
+  chat.scrollTop =
+  chat.scrollHeight;
+}
+
+function sendMessage() {
+
+  let text =
+  input.value.trim();
+
+  if (text === "") {
+    return;
+  }
+
+  addMessage(text, "user");
+
+  input.value = "";
+
+  setTimeout(function() {
+
+    addMessage(
+      "مرحبًا! أنا Billy. " +
+      "ميزة الذكاء الاصطناعي الحقيقية " +
+      "تحتاج إلى ربط الموقع بخدمة AI. " +
+      "لكن واجهة المحادثة جاهزة الآن.",
+      "bot"
+    );
+
+  }, 500);
+}
+
+function choosePhoto() {
+
+  photo.click();
+
+}
+
+photo.addEventListener(
+  "change",
+  function() {
+
+    let file = photo.files[0];
+
+    if (!file) {
+      return;
+    }
+
+    let url =
+    URL.createObjectURL(file);
+
+    let preview =
+    document.getElementById(
+      "photoPreview"
+    );
+
+    preview.src = url;
+
+    preview.style.display = "block";
+
+    addMessage(
+      "📷 تم اختيار صورة. " +
+      "Billy جاهز لاستقبالها.",
+      "user"
+    );
+
+  }
+);
+
+input.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (event.key === "Enter") {
+      sendMessage();
+    }
+
+  }
+);
+
+</script>
+
+</body>
+  </html>

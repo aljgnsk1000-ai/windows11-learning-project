@@ -3,6 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تعلم ويندوز 11 - aljgnsk1000-ai</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif}
+body{background:#eef4fb;color:#222}
+header{background:linear-gradient(135deg,#0078d4,#00bcf2);color:white;padding:28px 16px;text-align:center}
+nav{background:white;display:flex;gap:8px;padding:12px;overflow:auto;position:sticky;top:0;z-index:5;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+nav button{border:none;background:#eef2f7;padding:10px 16px;border-radius:20px;cursor:pointer;font-weight:700}
+nav button.active{background:#0078d4;color:white}
+.container{max-width:1000px;margin:auto;padding:16px}
+.card{background:white;border-radius:16px;padding:18px;margin-bottom:16px;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.lesson{border:2px solid #e5e7eb;border-radius:12px;padding:14px;cursor:pointer}
+.lesson:hover{border-color:#0078d4;transform:translateY(-2px)}
+.sim{background:#0f172a;border-radius:16px;height:500px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.win{position:absolute;top:30px;left:10%;width:80%;height:72%;background:white;border-radius:10px;display:none;flex-direction:column;color:#333}
+.win.show{display:flex}
+.win-head{height:38px;background:#f1f5f9;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-weight:700}
+.task{height:50px;background:rgba(255,255,255,.92);border-radius:12px;display:flex;gap:12px;align-items:center;justify-content:center;margin-top:auto}
+.step{display:flex;gap:10px;margin:10px 0}
+.num{width:28px;height:28px;background:#0078d4;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800}
+.btn{background:#0078d4;color:white;border:none;padding:10px 16px;border-radius:8px;cursor:pointer}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header><h1>💻 تعلم ويندوز 11 من الصفر</h1><p>مشروع تعليمي لطلابك - aljgnsk1000-ai - المدينة المنورة</p></header>
+<nav>
+<button class="active" onclick="tab('learn',this)">📚 الدروس</button>
+<button onclick="tab('sim',this)">🖥️ محاكي ويندوز</button>
+<button onclick="tab('quiz',this)">🎯 تدريب</button>
+</nav>
+<div class="container">
+<div id="learn">
+<div class="card"><h2>👋 أهلا بطلابنا!</h2><p>هذا الموقع يعلمكم كيف تستخدمون الكمبيوتر والويندوز 11 خطوة بخطوة وبشكل تفاعلي.</p></div>
+<div class="grid">
+<div class="lesson" onclick="openL(1)"><div style="font-size:30px">🖥️</div><h3>1- ما هو الكمبيوتر؟</h3><p>الشاشة، الكيبورد، الماوس</p></div>
+<div class="lesson" onclick="openL(2)"><div style="font-size:30px">🪟</div><h3>2- سطح المكتب</h3><p>الأيقونات وشريط المهام</p></div>
+<div class="lesson" onclick="openL(3)"><div style="font-size:30px">📁</div><h3>3- الملفات والمجلدات</h3><p>ترتيب ملفاتك</p></div>
+<div class="lesson" onclick="openL(4)"><div style="font-size:30px">🌐</div><h3>4- الانترنت</h3><p>البحث بأمان</p></div>
+<div class="lesson" onclick="openL(5)"><div style="font-size:30px">⚙️</div><h3>5- الإعدادات</h3><p>واي فاي وصوت</p></div>
+<div class="lesson" onclick="openL(6)"><div style="font-size:30px">🛡️</div><h3>6- السلامة</h3><p>كلمات المرور</p></div>
+</div>
+<div id="detail" class="card hidden"><h2 id="lt"></h2><div id="lb" style="margin-top:10px"></div><button class="btn" onclick="document.getElementById('detail').classList.add('hidden')" style="margin-top:12px">رجوع</button></div>
+</div>
+
+<div id="sim" class="hidden">
+<div class="card"><h2>🖥️ محاكي ويندوز 11 - جرب بنفسك</h2><p>دبل كليك على الأيقونات واسحب النافذة من فوق</p></div>
+<div class="sim"><div style="flex:1;position:relative">
+<div ondblclick="o('files')" style="position:absolute;right:12px;top:12px;color:white;text-align:center;cursor:pointer"><div style="font-size:28px">📁</div><div style="font-size:11px">ملفاتي</div></div>
+<div ondblclick="o('info')" style="position:absolute;right:12px;top:90px;color:white;text-align:center;cursor:pointer"><div style="font-size:28px">📚</div><div style="font-size:11px">دروسي</div></div>
+<div class="win" id="w-files"><div class="win-head"><span>📁 الملفات</span><span onclick="c('files')" style="cursor:pointer">✕</span></div><div style="padding:12px"><div class="step"><div class="num">1</div><div>المجلد مثل الدرج</div></div><div class="step"><div class="num">2</div><div>كليك يمين > جديد > مجلد</div></div><div class="step"><div class="num">3</div><div>اسحب الملفات للترتيب</div></div></div></div>
+<div class="win" id="w-info"><div class="win-head"><span>📚 الماوس</span><span onclick="c('info')" style="cursor:pointer">✕</span></div><div style="padding:12px"><p>كليك = تحديد<br>دبل كليك = فتح<br>كليك يمين = خيارات</p></div></div>
+</div><div class="task"><span onclick="document.getElementById('start').style.display=document.getElementById('start').style.display=='block'?'none':'block'" style="cursor:pointer">🪟</span><span onclick="o('files')" style="cursor:pointer">📁</span><span onclick="o('info')" style="cursor:pointer">📚</span></div><div id="start" style="position:absolute;bottom:62px;left:50%;transform:translateX(-50%);width:300px;background:white;border-radius:12px;padding:12px;display:none;color:#333"><b>قائمة ابدأ</b><br><br><div onclick="o('files')">📁 ملفاتي</div><div onclick="o('info')">📚 دروسي</div></div></div>
+</div>
+
+<div id="quiz" class="hidden"><div class="card"><h2>🎯 تدريب سريع</h2><p><b>وين نلقى الملفات المحذوفة؟</b></p><button onclick="alert('✅ صح! سلة المحذوفات')" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:2px solid #ddd;background:white;cursor:pointer">🗑️ سلة المحذوفات</button><button onclick="alert('❌ خطأ')" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:2px solid #ddd;background:white<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>تعلم ويندوز 11</title>
 <style>
 *{box-sizing:border-box;font-family:Tahoma;margin:0;padding:0}

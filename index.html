@@ -1,21 +1,164 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>تعلم ويندوز 11</title><style>*{box-sizing:border-box;font-family:Tahoma;margin:0;padding:0}body{background:#eef2f7}header{background:#0078d4;color:#fff;padding:18px;text-align:center}.tabs{display:flex;gap:6px;padding:8px;background:#fff}.tabs button{flex:1;padding:14px;border:none;border-radius:10px;background:#e6eef7;font-weight:bold}.tabs button.active{background:#0078d4;color:#fff}.card{background:#fff;margin:10px;border-radius:12px;padding:14px}.lesson{border:2px solid #0078d4;background:#f8fbff;border-radius:10px;padding:14px;margin:8px 0}</style></head><body>
-<header><h2>💻 تعلم ويندوز 11 من الصفر</h2><p>aljgnsk1000-ai</p></header>
-<div class="tabs"><button class="active" id="bt1" onclick="document.getElementById('a').style.display='block';document.getElementById('b').style.display='none';document.getElementById('c').style.display='none';this.classList.add('active');document.getElementById('bt2').classList.remove('active');document.getElementById('bt3').classList.remove('active')">📚 الدروس</button><button id="bt2" onclick="document.getElementById('a').style.display='none';document.getElementById('b').style.display='block';document.getElementById('c').style.display='none';this.classList.add('active');document.getElementById('bt1').classList.remove('active');document.getElementById('bt3').classList.remove('active')">🖥️ محاكي</button><button id="bt3" onclick="document.getElementById('a').style.display='none';document.getElementById('b').style.display='none';document.getElementById('c').style.display='block';this.classList.add('active');document.getElementById('bt1').classList.remove('active');document.getElementById('bt2').classList.remove('active')">🎯 اختبار</button></div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+<title>أكاديمية الكمبيوتر</title>
 
-<div id="a"><div class="card"><b>👋 المس لمسة سريعة على أي درس تحت</b></div><div class="card">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-<div class="lesson" onclick="var d=this.querySelector('div');d.style.display=d.style.display=='block'?'none':'block'"><b>1- ما هو الكمبيوتر؟</b><br><small>الشاشة، الكيبورد، الماوس</small><div style="display:none;margin-top:10px;background:#dbeafe;padding:10px;border-radius:8px">الكمبيوتر جهاز يساعدك تدرس وتلعب. الشاشة تشوف فيها، الماوس تحرك، الكيبورد تكتب.</div></div>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f7fc;
+  color: #182230;
+}
 
-<div class="lesson" onclick="var d=this.querySelector('div');d.style.display=d.style.display=='block'?'none':'block'"><b>2- سطح المكتب</b><br><small>الأيقونات وشريط المهام</small><div style="display:none;margin-top:10px;background:#dbeafe;padding:10px;border-radius:8px">سطح المكتب اول شاشة تشوفها بعد التشغيل. فيه ايقونات وتحت شريط المهام.</div></div>
+header {
+  background: linear-gradient(135deg,#087fe8,#005bb5);
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
 
-<div class="lesson" onclick="var d=this.querySelector('div');d.style.display=d.style.display=='block'?'none':'block'"><b>3- الملفات والمجلدات</b><br><small>ترتيب ملفاتك</small><div style="display:none;margin-top:10px;background:#dbeafe;padding:10px;border-radius:8px">المجلد مثل الحقيبة. كليك يمين > جديد > مجلد.</div></div>
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
 
-<div class="lesson" onclick="var d=this.querySelector('div');d.style.display=d.style.display=='block'?'none':'block'"><b>4- الانترنت</b><br><small>تصفح بأمان</small><div style="display:none;margin-top:10px;background:#dbeafe;padding:10px;border-radius:8px">افتح Edge وابحث في جوجل. لا تضغط روابط غريبة!</div></div>
+header p {
+  font-size: 17px;
+}
 
-<div class="lesson" onclick="var d=this.querySelector('div');d.style.display=d.style.display=='block'?'none':'block'"><b>5- الإعدادات</b><br><small>واي فاي وصوت</small><div style="display:none;margin-top:10px;background:#dbeafe;padding:10px;border-radius:8px">من الاعدادات تغير الواي فاي والصوت والخلفية.</div></div>
+nav {
+  background: white;
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px #0002;
+}
 
-<div class="lesson" onclick="var d=this.querySelector('div');d.style.display=d.style.display=='block'?'none':'block'"><b>6- السلامة</b><br><small>كلمات المرور</small><div style="display:none;margin-top:10px;background:#dbeafe;padding:10px;border-radius:8px">استخدم كلمة سر قوية ولا تعطيها لاحد.</div></div>
+nav a {
+  flex: 1;
+  padding: 15px 5px;
+  text-align: center;
+  color: #075da8;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-</div></div>
+nav a:hover {
+  background: #e9f4ff;
+}
 
-<div id="b" style="display:none"><div class="card"><b>🖥️ محاكي ويندوز</b><br>المس الملفات تفتح</div><div style="background:#0b1220;border-radius:12px;height:400px;position:relative;margin:10px;padding:10px"><div style="width:65px;background:#fff2;color:#fff;border-radius:10px;text-align:center;padding:8px;margin:5px;display:inline-block" onclick="document.getElementById('w1').style.display='block'">📁<br>ملفاتي</div><div style="width:65px;background:#fff2;color:#fff;border-radius:10px;text-align:center;padding:8px;margin:5px;display:inline-block" onclick="document.getElementById('w2').style.display='block'">❓<br>مساعدة</div><div id="w1" style="display:none;position:absolute;left:10px;top:80px;width:90%;background:#fff;border-radius:10px"><div style="background:#ddd;padding:10px;display:flex;justify-content:space-between"><span>📁 ملفاتي</span><span onclick="document.getElementById('w1').style.display='none'">✕</span></div><div style="padding:10px">• المستندات<br>• الصور<br>• التحميلات</div></div><div id="w2" style="display:none;position:absolute;left:10px;top:140px;width:90%;background:#fff;border-radius:10px"><div style="background:#ddd;padding:10px;display:flex;justify-content:space-between"><span>❓ مساعدة</span><span onclick="document.getElementById('w2').style.display
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px 15px;
+}
+
+h2 {
+  text-align: center;
+  color: #076bbd;
+  margin-bottom: 25px;
+}
+
+.card {
+  background: white;
+  margin: 13px 0;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #0001;
+  overflow: hidden;
+}
+
+summary {
+  padding: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #075da8;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: "＋";
+  float: left;
+  font-size: 22px;
+}
+
+details[open] summary::before {
+  content: "−";
+}
+
+.answer {
+  padding: 5px 20px 20px;
+  line-height: 1.9;
+  border-top: 1px solid #eee;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+  gap: 15px;
+}
+
+.box {
+  background: white;
+  padding: 25px 15px;
+  text-align: center;
+  border-radius: 18px;
+  box-shadow: 0 3px 12px #0001;
+}
+
+.box a {
+  text-decoration: none;
+  color: #075da8;
+  font-weight: bold;
+}
+
+.emoji {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.window {
+  background: white;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #0001;
+}
+
+.question {
+  background: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #0001;
+}
+
+.question label {
+  display: block;
+  padding: 10px;
+  margin: 7px 0;
+  background: #f0f6fc;
+  border-radius: 8px;
+}
+
+button {
+  border: 0;
+  background: #087fe8;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 10px;
+  font-size: 17

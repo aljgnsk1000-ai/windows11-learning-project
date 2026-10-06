@@ -3,10 +3,15 @@
 
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport"
 content="width=device-width, initial-scale=1">
 
 <title>تعلم الكمبيوتر</title>
+
+<script
+src="https://js.puter.com/v2/">
+</script>
 
 <style>
 
@@ -92,10 +97,37 @@ summary {
   color: #62b5ff;
 }
 
-.ai-box {
-  background: #1d2939;
+.chat {
+  background: #172235;
+  border-radius: 15px;
   padding: 15px;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.message {
+  padding: 12px;
+  margin: 10px 0;
   border-radius: 12px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.user {
+  background: #087fe8;
+  margin-right: 20px;
+}
+
+.bot {
+  background: #29384d;
+  margin-left: 20px;
+}
+
+.message img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 8px;
 }
 
 .ai-input {
@@ -103,13 +135,19 @@ summary {
   padding: 14px;
   border: 0;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-top: 12px;
   font-size: 16px;
   box-sizing: border-box;
 }
 
+.ai-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 .ai-button {
-  width: 100%;
+  flex: 1;
   padding: 14px;
   background: #087fe8;
   color: white;
@@ -117,14 +155,33 @@ summary {
   border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 }
 
-.ai-answer {
-  margin-top: 15px;
-  background: #263548;
-  padding: 15px;
+.image-button {
+  background: #34495e;
+}
+
+#imageInput {
+  display: none;
+}
+
+.preview {
+  margin-top: 10px;
+  display: none;
+}
+
+.preview img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
   border-radius: 10px;
-  line-height: 1.8;
+}
+
+.status {
+  text-align: center;
+  color: #a9c7e8;
+  margin-top: 10px;
 }
 
 footer {
@@ -133,6 +190,27 @@ footer {
   text-align: center;
   padding: 25px;
   margin-top: 30px;
+}
+
+@media (max-width:600px) {
+
+  header h1 {
+    font-size: 25px;
+  }
+
+  nav a {
+    font-size: 13px;
+    margin: 3px;
+  }
+
+  .user {
+    margin-right: 5px;
+  }
+
+  .bot {
+    margin-left: 5px;
+  }
+
 }
 
 </style>
@@ -354,11 +432,109 @@ Windows 11 هو نظام تشغيل
 <h2>🤖 Computer AI</h2>
 
 <p>
-Ask the AI about computers and
-Windows 11.
+Ask Computer AI about computers
+and Windows 11.
 </p>
 
-<div class="ai-box">
+<div id="chat" class="chat">
+
+<div class="message bot">
+
+Hello! 👋
+
+I am Computer AI.
+
+You can ask me about computers
+and Windows 11.
+
+You can also send me a picture. 📷
+
+</div>
+
+</div>
 
 <input
-id="question
+id="question"
+class="ai-input"
+type="text"
+placeholder="Type your question...">
+
+<input
+id="imageInput"
+type="file"
+accept="image/*">
+
+<div id="preview"
+class="preview">
+
+<img id="previewImage">
+
+</div>
+
+<div class="ai-buttons">
+
+<button
+class="ai-button image-button"
+onclick="chooseImage()">
+
+📷 Send Image
+
+</button>
+
+<button
+class="ai-button"
+onclick="sendMessage()">
+
+Send 💬
+
+</button>
+
+</div>
+
+<div
+id="status"
+class="status">
+
+Ready
+
+</div>
+
+</div>
+
+</main>
+
+<footer>
+
+أكاديمية الكمبيوتر © 2026
+
+</footer>
+
+<script>
+
+let selectedImage = null;
+
+let history = [];
+
+function chooseImage() {
+
+  document
+    .getElementById("imageInput")
+    .click();
+
+}
+
+document
+  .getElementById("imageInput")
+  .addEventListener(
+    "change",
+    function() {
+
+      selectedImage = this.files[0];
+
+      if (!selectedImage) {
+        return;
+      }
+
+      let url =
+        URL.createObjectURL(
+          selectedImage

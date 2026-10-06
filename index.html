@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"
-content="width=device-width,initial-scale=1.0">
-<title>أكاديمية الكمبيوتر</title>
+content="width=device-width, initial-scale=1">
+
+<title>تعلم الكمبيوتر</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f3f7fc;
-  color: #182230;
+  font-family: Arial;
+  background: #eef6ff;
+  color: #222;
 }
 
 header {
-  background: linear-gradient(135deg,#087fe8,#005bb5);
+  background: #087fe8;
   color: white;
   text-align: center;
-  padding: 35px 15px;
+  padding: 30px 10px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 header p {
@@ -36,129 +35,328 @@ header p {
 
 nav {
   background: white;
-  display: flex;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 8px #0002;
+  padding: 15px;
+  text-align: center;
 }
 
 nav a {
-  flex: 1;
-  padding: 15px 5px;
-  text-align: center;
-  color: #075da8;
+  color: #0871c9;
   text-decoration: none;
+  margin: 8px;
   font-weight: bold;
 }
 
-nav a:hover {
-  background: #e9f4ff;
-}
-
-section {
-  max-width: 900px;
+main {
+  max-width: 800px;
   margin: auto;
-  padding: 25px 15px;
-}
-
-h2 {
-  text-align: center;
-  color: #076bbd;
-  margin-bottom: 25px;
+  padding: 20px;
 }
 
 .card {
   background: white;
-  margin: 13px 0;
+  margin: 15px 0;
+  padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 3px 12px #0001;
-  overflow: hidden;
+  box-shadow: 0 3px 10px #0002;
+}
+
+.card h2 {
+  color: #0871c9;
+}
+
+details {
+  margin-top: 15px;
 }
 
 summary {
-  padding: 20px;
+  background: #e7f3ff;
+  padding: 15px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 18px;
   font-weight: bold;
-  color: #075da8;
-  list-style: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary::before {
-  content: "＋";
-  float: left;
-  font-size: 22px;
-}
-
-details[open] summary::before {
-  content: "−";
 }
 
 .answer {
-  padding: 5px 20px 20px;
-  line-height: 1.9;
-  border-top: 1px solid #eee;
+  padding: 15px;
+  line-height: 1.8;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns:
-    repeat(2,minmax(0,1fr));
-  gap: 15px;
-}
-
-.box {
-  background: white;
-  padding: 25px 15px;
-  text-align: center;
-  border-radius: 18px;
-  box-shadow: 0 3px 12px #0001;
-}
-
-.box a {
-  text-decoration: none;
-  color: #075da8;
-  font-weight: bold;
-}
-
-.emoji {
-  font-size: 45px;
-  margin-bottom: 10px;
-}
-
-.window {
-  background: white;
-  margin-top: 20px;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 3px 12px #0001;
-}
-
-.question {
-  background: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 15px;
-  box-shadow: 0 3px 12px #0001;
-}
-
-.question label {
-  display: block;
-  padding: 10px;
-  margin: 7px 0;
-  background: #f0f6fc;
-  border-radius: 8px;
-}
-
-button {
-  border: 0;
-  background: #087fe8;
+footer {
+  background: #222;
   color: white;
-  padding: 14px 25px;
-  border-radius: 10px;
-  font-size: 17
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>💻 أكاديمية الكمبيوتر</h1>
+
+<p>
+تعلم الكمبيوتر و Windows 11 بسهولة
+</p>
+
+</header>
+
+<nav>
+
+<a href="#home">الرئيسية</a>
+
+<a href="#lessons">الدروس</a>
+
+<a href="#windows">Windows 11</a>
+
+<a href="#test">الاختبار</a>
+
+</nav>
+
+<main>
+
+<div class="card" id="home">
+
+<h2>👋 أهلاً بك</h2>
+
+<p>
+مرحباً بك في موقع تعلم الكمبيوتر.
+</p>
+
+<p>
+هنا ستتعلم أساسيات الكمبيوتر
+ونظام Windows 11 خطوة بخطوة.
+</p>
+
+</div>
+
+<div class="card" id="lessons">
+
+<h2>📚 الدروس</h2>
+
+<details>
+
+<summary>
+الدرس 1: ما هو الكمبيوتر؟
+</summary>
+
+<div class="answer">
+
+الكمبيوتر جهاز إلكتروني
+يستقبل المعلومات ويعالجها
+ثم يعرض النتائج.
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+الدرس 2: ما هو الماوس؟
+</summary>
+
+<div class="answer">
+
+الماوس يساعدك على تحريك المؤشر
+والضغط على الأشياء وفتح البرامج.
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+الدرس 3: لوحة المفاتيح
+</summary>
+
+<div class="answer">
+
+لوحة المفاتيح تستخدم لكتابة
+الحروف والأرقام والأوامر.
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+الدرس 4: الملفات
+</summary>
+
+<div class="answer">
+
+الملفات تحتوي على معلومات
+مثل الصور والفيديوهات والمستندات.
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+الدرس 5: المجلدات
+</summary>
+
+<div class="answer">
+
+المجلد يساعدك على ترتيب الملفات
+وتنظيمها داخل الكمبيوتر.
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+الدرس 6: الإنترنت
+</summary>
+
+<div class="answer">
+
+الإنترنت شبكة عالمية تساعدك
+على الوصول إلى المعلومات
+والخدمات والمواقع.
+
+</div>
+
+</details>
+
+</div>
+
+<div class="card" id="windows">
+
+<h2>🪟 Windows 11</h2>
+
+<details>
+
+<summary>
+ما هو Windows 11؟
+</summary>
+
+<div class="answer">
+
+Windows 11 هو نظام تشغيل
+من شركة Microsoft.
+
+يساعدك على استخدام الكمبيوتر
+وتشغيل البرامج وإدارة الملفات.
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+سطح المكتب
+</summary>
+
+<div class="answer">
+
+سطح المكتب هو الشاشة التي تظهر
+بعد تشغيل Windows.
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+قائمة ابدأ
+</summary>
+
+<div class="answer">
+
+قائمة ابدأ تساعدك على الوصول
+إلى البرامج والإعدادات.
+
+</div>
+
+</details>
+
+<details>
+
+<summary>
+شريط المهام
+</summary>
+
+<div class="answer">
+
+شريط المهام يوجد عادةً أسفل
+الشاشة ويساعدك على الوصول
+إلى البرامج المفتوحة.
+
+</div>
+
+</details>
+
+</div>
+
+<div class="card" id="test">
+
+<h2>📝 اختبار سريع</h2>
+
+<p>
+<strong>
+ما هو Windows 11؟
+</strong>
+</p>
+
+<details>
+
+<summary>
+اضغط لمعرفة الإجابة
+</summary>
+
+<div class="answer">
+
+الإجابة:
+Windows 11 هو نظام تشغيل.
+
+</div>
+
+</details>
+
+<p>
+<strong>
+ما فائدة الماوس؟
+</strong>
+</p>
+
+<details>
+
+<summary>
+اضغط لمعرفة الإجابة
+</summary>
+
+<div class="answer">
+
+الإجابة:
+تحريك المؤشر والضغط على الأشياء.
+
+</div>
+
+</details>
+
+</div>
+
+</main>
+
+<footer>
+
+أكاديمية الكمبيوتر © 2026
+
+</footer>
+
+</body>
+
+</html>

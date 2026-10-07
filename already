@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أكاديمية JavaScript</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6f8;
+    color:#222;
+}
+
+header{
+    background:#202124;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+header h1{
+    color:#f7df1e;
+    margin:0 0 10px;
+}
+
+nav{
+    background:#f7df1e;
+    padding:12px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+nav button{
+    border:0;
+    background:transparent;
+    font-weight:bold;
+    padding:10px 15px;
+    cursor:pointer;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin:20px 0;
+    border-radius:15px;
+    box-shadow:0 3px 12px #0002;
+}
+
+.hero{
+    text-align:center;
+    padding:45px 20px;
+}
+
+.hero h2{
+    font-size:32px;
+}
+
+.lesson{
+    border-right:5px solid #f7df1e;
+    padding-right:15px;
+    line-height:1.9;
+}
+
+pre{
+    direction:ltr;
+    text-align:left;
+    background:#181818;
+    color:#00ff88;
+    padding:18px;
+    border-radius:10px;
+    overflow:auto;
+}
+
+textarea{
+    width:100%;
+    height:220px;
+    direction:ltr;
+    text-align:left;
+    background:#181818;
+    color:#00ff88;
+    padding:15px;
+    border:0;
+    border-radius:10px;
+    font-size:15px;
+    resize:vertical;
+}
+
+button.action{
+    background:#f7df1e;
+    border:0;
+    padding:12px 20px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button.action:hover{
+    background:#e5ce00;
+}
+
+.output{
+    background:#eee;
+    padding:15px;
+    margin-top:10px;
+    border-radius:10px;
+    min-height:50px;
+    white-space:pre-wrap;
+}
+
+.lesson-btn{
+    display:block;
+    width:100%;
+    padding:16px;
+    margin:10px 0;
+    background:#f7df1e;
+    border:0;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.question{
+    margin:20px 0;
+    padding:15px;
+    background:#f4f4f4;
+    border-radius:10px;
+}
+
+.option{
+    display:block;
+    margin:8px 0;
+    padding:10px;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.progress{
+    width:100%;
+    height:20px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#f7df1e;
+    transition:.4s;
+}
+
+footer{
+    background:#202124;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>⚡ أكاديمية JavaScript</h1>
+    <p>تعلم البرمجة من الصفر بطريقة سهلة</p>
+</header>
+
+<nav>
+    <button onclick="showPage('home')">🏠 الرئيسية</button>
+    <button onclick="showPage('lessons')">📚 الدروس</button>
+    <button onclick="showPage('editor')">💻 محرر الكود</button>
+    <button onclick="showPage('quiz')">🧠 الاختبار</button>
+</nav>
+
+<div class="container">
+
+<!-- الرئيسية -->
+<section id="home" class="page active">
+
+<div class="card hero">
+    <h2>أهلاً بك في أكاديمية JavaScript 🚀</h2>
+
+    <p>
+        هنا ستتعلم أساسيات JavaScript خطوة بخطوة،
+        من أول سطر برمجي حتى كتابة برامج بسيطة.
+    </p>
+
+    <button class="action" onclick="showPage('lessons')">
+        ابدأ التعلم 📚
+    </button>
+</div>
+
+<div class="card">
+    <h2>📈 تقدمك</h2>
+
+    <div class="progress">
+        <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <p id="progressText">0% مكتمل</p>
+</div>
+
+<div class="card">
+    <h2>ماذا ستتعلم؟</h2>
+
+    <ul>
+        <li>ما هي JavaScript؟</li>
+        <li>المتغيرات</li>
+        <li>النصوص والأرقام</li>
+        <li>السؤال من المستخدم</li>
+        <li>الشروط If</li>
+        <li>الحلقات</li>
+        <li>الدوال</li>
+        <li>كتابة برامج بسيطة</li>
+    </ul>
+</div>
+
+</section>
+
+
+<!-- الدروس -->
+<section id="lessons" class="page">
+
+<div class="card">
+    <h2>📚 دروس JavaScript</h2>
+
+    <button class="lesson-btn" onclick="lesson(1)">
+        الدرس 1: ما هي JavaScript؟
+    </button>
+
+    <button class="lesson-btn" onclick="lesson(2)">
+        الدرس 2: المتغيرات
+    </button>
+
+    <button class="lesson-btn" onclick="lesson(3)">
+        الدرس 3: السؤال من المستخدم
+    </button>
+
+    <button class="lesson-btn" onclick="lesson(4)">
+        الدرس 4: الشروط If
+    </button>
+
+    <button class="lesson-btn" onclick="lesson(5)">
+        الدرس 5: الدوال
+    </button>
+</div>
+
+<div id="lessonContent" class="card">
+
+<h2>اختر درساً 👆</h2>
+
+<p>
+اضغط على أحد الدروس حتى يبدأ الشرح.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- المحرر -->
+<section id="editor" class="page">
+
+<div class="card">
+
+<h2>💻 محرر JavaScript</h2>
+
+<p>
+اكتب الكود هنا ثم اضغط تشغيل.
+</p>
+
+<textarea id="code">
+let name = prompt("ما اسمك؟");
+
+alert("أهلاً يا " + name);
+</textarea>
+
+<br>
+
+<button class="action" onclick="runCode()">
+▶ تشغيل الكود
+</button>
+
+<div id="output" class="output">
+ستظهر النتيجة هنا.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>مثال سريع:</h3>
+
+<pre>
+let name = "Ali";
+let age = 13;
+
+console.log(name);
+console.log(age);
+</pre>
+
+</div>
+
+</section>
+
+
+<!-- الاختبار -->
+<section id="quiz" class="page">
+
+<div class="card">
+
+<h2>🧠 اختبار JavaScript</h2>
+
+<div class="question">
+
+<p><b>1. ماذا تستخدم لتخزين قيمة؟</b></p>
+
+<label class="option">
+<input type="radio" name="q1" value="0">
+console
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="1">
+let
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="0">
+alert
+</label>
+
+</div>
+
+
+<div class="question">
+
+<p><b>2. ماذا يفعل alert؟</b></p>
+
+<label class="option">
+<input type="radio" name="q2" value="1">
+يعرض رسالة للمستخدم
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="0">
+يحذف الموقع
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="0">
+يطفئ الكمبيوتر
+</label>
+
+</div>
+
+
+<div class="question">
+
+<p><b>3. أي واحد صحيح؟</b></p>
+
+<label class="option">
+<input type="radio" name="q3" value="1">
+let age = 13;
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="0">
+age let = 13;
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="0">
+13 = age;
+</label>
+
+</div>
+
+<button class="action" onclick="checkQuiz()">
+تصحيح الاختبار
+</button>
+
+<h3 id="quizResult"></h3>
+
+</div>
+
+</section>
+
+</div>
+
+<footer>
+    <p>⚡ أكاديمية JavaScript</p>
+    <p>تعلم اليوم، وبرمج غداً 🚀</p>
+</footer>
+
+
+<script>
+
+let completed = 0;
+
+
+/* تغيير الصفحات */
+
+function showPage(page){
+
+    document.querySelectorAll(".page").forEach(function(p){
+        p.classList.remove("active");
+    });
+
+    document.getElementById(page).classList.add("active");
+
+    window.scrollTo(0,0);
+}
+
+
+/* الدروس */
+
+function lesson(number){
+
+    let content = document.getElementById("lessonContent");
+
+    if(number === 1){
+
+        content.innerHTML = `
+        <div class="lesson">
+
+        <h2>📘 الدرس 1: ما هي JavaScript؟</h2>
+
+        <p>
+        JavaScript هي لغة برمجة تجعل المواقع تفاعلية.
+        </p>
+
+        <p>مثال:</p>
+
+        <pre>console.log("مرحبا بالعالم!");</pre>
+
+        <p>
+        الأمر console.log يعرض المعلومات في وحدة التحكم.
+        </p>
+
+        </div>
+        `;
+
+    }
+
+    if(number === 2){
+
+        content.innerHTML = `
+        <div class="lesson">
+
+        <h2>📘 الدرس 2: المتغيرات</h2>
+
+        <p>
+        المتغير هو مكان نخزن فيه معلومات.
+        </p>
+
+        <pre>
+let name = "Ali";
+let age = 13;
+
+console.log(name);
+console.log(age);
+        </pre>
+
+        <p>
+        هنا خزّنا الاسم والعمر داخل متغيرات.
+        </p>
+
+        </div>
+        `;
+
+    }
+
+    if(number === 3){
+
+        content.innerHTML = `
+        <div class="lesson">
+
+        <h2>📘 الدرس 3: السؤال من المستخدم</h2>
+
+        <p>
+        يمكن للبرنامج أن يسأل المستخدم باستخدام prompt.
+        </p>
+
+        <pre>
+let name = prompt("ما اسمك؟");
+
+alert("أهلاً يا " + name);
+        </pre>
+
+        <p>
+        prompt يسأل المستخدم، و alert يعرض رسالة.
+        </p>
+
+        </div>
+        `;
+
+    }
+
+    if(number === 4){
+
+        content.innerHTML = `
+        <div class="lesson">
+
+        <h2>📘 الدرس 4: الشروط If</h2>
+
+        <p>
+        نستخدم if عندما نريد من البرنامج اتخاذ قرار.
+        </p>
+
+        <pre>
+let age = 13;
+
+if(age >= 13){
+    alert("أهلاً بك!");
+}
+        </pre>
+
+        </div>
+        `;
+
+    }
+
+    if(number === 5){
+
+        content.innerHTML = `
+        <div class="lesson">
+
+        <h2>📘 الدرس 5: الدوال</h2>
+
+        <p>
+        الدالة هي مجموعة أوامر يمكن تشغيلها عندما نحتاج إليها.
+        </p>
+
+        <pre>
+function hello(){
+
+    alert("مرحباً!");
+
+}
+
+hello();
+        </pre>
+
+        </div>
+        `;
+
+    }
+
+    completed++;
+
+    if(completed > 5){
+        completed = 5;
+    }
+
+    updateProgress();
+}
+
+
+/* تشغيل الكود */
+
+function runCode(){
+
+    let code = document.getElementById("code").value;
+    let output = document.getElementById("output");
+
+    try{
+
+        let oldLog = console.log;
+
+        let messages = [];
+
+        console.log = function(message){
+            messages.push(message);
+        };
+
+        new Function(code)();
+
+        console.log = oldLog;
+
+        output.innerText =
+        messages.length > 0
+        ? messages.join("\n")
+        : "تم تشغيل الكود بنجاح ✅";
+
+    }catch(error){
+
+        output.innerText =
+        "حدث خطأ في الكود:\n" + error.message;
+
+    }
+
+}
+
+
+/* الاختبار */
+
+function checkQuiz(){
+
+    let score = 0;
+
+    let answers = [
+        document.querySelector('input[name="q1"]:checked'),
+        document.querySelector('input[name="q2"]:checked'),
+        document.querySelector('input[name="q3"]:checked')
+    ];
+
+    answers.forEach(function(answer){
+
+        if(answer && answer.value === "1"){
+            score++;
+        }
+
+    });
+
+    document.getElementById("quizResult").innerText =
+    "نتيجتك: " + score + " من 3 🎉";
+
+    if(score === 3){
+
+        completed = 5;
+        updateProgress();
+
+    }
+
+}
+
+
+/* التقدم */
+
+function updateProgress(){
+
+    let percentage = completed * 20;
+
+    document.getElementById("progressBar").style.width =
+    percentage + "%";
+
+    document.getElementById("progressText").innerText =
+    percentage + "% مكتمل";
+
+}
+
+</script>
+
+</body>
+</html>
